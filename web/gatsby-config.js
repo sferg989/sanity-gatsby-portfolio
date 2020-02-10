@@ -12,6 +12,10 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-source-sanity-transform-images',
+
     {
       resolve: 'gatsby-source-sanity',
       options: {
@@ -20,6 +24,16 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: 'images'
+      }
+    },
+    {
+      resolve: 'gatsby-source-sanity-transform-images'
     }
   ]
 }

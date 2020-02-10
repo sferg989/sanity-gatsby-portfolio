@@ -7,6 +7,26 @@ const {isFuture} = require('date-fns')
 
 async function createProjectPages (graphql, actions, reporter) {
   const {createPage} = actions
+
+  const img = await graphql(`
+    {
+      allSanityImageAsset {
+        nodes {
+          url
+          localFile(width: 1000) {
+            publicURL
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  if (img.errors) throw img.errors
+
   const result = await graphql(`
     {
       allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
