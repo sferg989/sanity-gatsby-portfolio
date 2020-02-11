@@ -1,0 +1,23 @@
+@import '../styles/colors.scss';
+@import '../styles/variables.scss';
+
+.title {
+  font-size: 3em;
+  color : $mei;
+
+}
+
+.button {
+  background-color: transparent;
+  border: 0;
+  color: $shadow;
+  cursor: pointer;
+  font-family: $impact-font;
+  font-weight: $impact-font-bold-weight;
+  padding: 0;
+
+  &:hover {
+    color: $mizu;
+    text-decoration: underline;
+  }
+}

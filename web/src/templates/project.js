@@ -11,6 +11,10 @@ export const query = graphql`
            sampleProject: sanitySampleProject(id: { eq: $id }) {
              id
              publishedAt
+             herosub {
+               heroMsg
+               heroSub
+             }
              categories {
                _id
                title
@@ -40,7 +44,7 @@ export const query = graphql`
                  width
                }
                asset {
-                  _id
+                 _id
                  localFile {
                    childImageSharp {
                      fluid {

@@ -9,6 +9,9 @@ import RoleList from './role-list'
 import styled from '@emotion/styled'
 import BackgroundImage from 'gatsby-background-image'
 import styles from './project.module.css'
+
+import './project.scss'
+
 const ImageBackground = styled(BackgroundImage)`
   background-position: top 20% center;
   background-size: cover;
@@ -57,13 +60,22 @@ function Project (props) {
     }
   `)
 
-  const {_rawBody, title, categories, mainImage, members, publishedAt, relatedProjects} = props
-  const myObjStr = JSON.stringify(mainImage)
+  const {
+    _rawBody,
+    title,
+    categories,
+    mainImage,
+    members,
+    publishedAt,
+    relatedProjects,
+    herosub
+  } = props
+  const myObjStr = JSON.stringify(herosub[0])
   console.log(myObjStr)
   return (
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
-        <div >
+        <div>
           <ImageBackground
             Tag="section"
             fluid={mainImage.asset.localFile.childImageSharp.fluid}
@@ -79,7 +91,18 @@ function Project (props) {
       <Container>
         <div className={styles.grid}>
           <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
+            {herosub && herosub.length > 0 && (
+              <ul>
+                {herosub.map(herosubs => (
+                  <>
+                    <li>{herosubs.heroMsg}</li>
+                    <li>{herosubs.heroSub}</li>
+                  </>
+                ))}
+              </ul>
+            )}
+
+            <h1 className="title">{title}</h1>
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
           </div>
           <aside className={styles.metaContent}>

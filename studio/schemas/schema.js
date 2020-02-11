@@ -8,12 +8,14 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import category from './documents/category'
 import person from './documents/person'
 import sampleProject from './documents/sampleProject'
+import samplePage from './documents/samplePage'
 import siteSettings from './documents/siteSettings'
 
 // Object types
 import bioPortableText from './objects/bioPortableText'
 import figure from './objects/figure'
 import projectMember from './objects/projectMember'
+import projectHerosub from './objects/projectHerosub'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
 
@@ -29,6 +31,7 @@ export default createSchema({
     bioPortableText,
     figure,
     projectMember,
+    projectHerosub,
     projectPortableText,
     simplePortableText,
     // The following are document types which will appear
@@ -36,6 +39,7 @@ export default createSchema({
     category,
     person,
     sampleProject,
+    samplePage,
     siteSettings
   ])
 })

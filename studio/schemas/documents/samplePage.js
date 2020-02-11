@@ -1,16 +1,10 @@
 import {format} from 'date-fns'
 
 export default {
-  name: 'sampleProject',
-  title: 'Sample project',
+  name: 'samplePage',
+  title: 'Sample Page',
   type: 'document',
   fields: [
-    {
-      name: 'herosub',
-      title: 'Hero Sub',
-      type: 'array',
-      of: [{type: 'projectHerosub'}]
-    },
     {
       name: 'title',
       title: 'Title',
@@ -33,17 +27,6 @@ export default {
       type: 'datetime'
     },
     {
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'simplePortableText'
-    },
-    {
-      name: 'members',
-      title: 'Members',
-      type: 'array',
-      of: [{type: 'projectMember'}]
-    },
-    {
       name: 'startedAt',
       title: 'Started at',
       type: 'datetime'
@@ -52,22 +35,6 @@ export default {
       name: 'endedAt',
       title: 'Ended at',
       type: 'datetime'
-    },
-    {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'figure'
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}]
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'projectPortableText'
     },
     {
       name: 'relatedProjects',
@@ -80,15 +47,13 @@ export default {
     select: {
       title: 'title',
       publishedAt: 'publishedAt',
-      slug: 'slug',
-      media: 'mainImage'
+      slug: 'slug'
     },
-    prepare ({title = 'No title', publishedAt, slug = {}, media}) {
+    prepare ({title = 'No title', publishedAt, slug = {}}) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
       const path = `/${dateSegment}/${slug.current}/`
       return {
         title,
-        media,
         subtitle: publishedAt ? path : 'Missing publishing date'
       }
     }

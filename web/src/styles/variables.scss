@@ -1,0 +1,25 @@
+@import 'colors';
+
+// colors
+$color-background: $snow;
+$color-header-text: $midnight;
+
+// fonts
+$main-font: 'Open Sans', sans-serif;
+$main-font-bold-weight: 600;
+$impact-font: 'Lato', sans-serif;
+$impact-font-bold-weight: 700;
+
+// line height
+$lineheight: 1.2;
+$lineheight-spacy: 1.4;
+$lineheight-spacier: 1.6;
+$lineheight-spaciest: 1.8;
+$lineheight-spaciest-est: 2;
+
+// layout
+$headerheight: 65px;
+$minfooterheight: 50px;
+$border-radius: 5px;
+$dashboard-nav-width: 260px;
+$dashboard-content-horizontal-margin: 60px;
