@@ -28,7 +28,7 @@
     "gatsby-source-sanity": "^4.0.1",
     "gatsby-source-sanity-transform-images": "0.0.4",
     "gatsby-transformer-sharp": "^2.3.14",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0"
